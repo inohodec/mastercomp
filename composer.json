@@ -1,0 +1,19 @@
+{
+    "name": "ostepan/master.dp.ua",
+    "authors": [
+        {
+            "name": "Max from Work",
+            "email": "max.ostepan@gmail.com"
+        }
+    ],
+    "require": {
+        "funct/funct": "^1.5",
+        "ezyang/htmlpurifier": "^4.13",
+        "intervention/image": "^2.7"
+    },
+    "autoload": {
+        "psr-4": {
+            "Ostepan\\Lib\\": "myOwnLibs"
+        }
+    }
+}
