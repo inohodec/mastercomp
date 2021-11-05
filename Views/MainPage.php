@@ -16,11 +16,14 @@
             <?php
                 echo "<h1>The main page</h1>";
                 echo "<p>" . __FILE__ . "</p>";
-                echo "<ul>";
+                echo "<table class='table table-striped table-hover'>";
                 foreach ($_SERVER as $item => $val ) {
-                    echo "<li>$item = <span class=\"badge bg-success\">$val</span></li>";
+                    echo "<tr>";
+                    echo "<td>$item</td><td><code>$val</code></td>";
+                    echo "</tr>";
                 }
-                echo "</ul>";
+
+                echo "</table>";
             ?>
         </div>
     </div>
