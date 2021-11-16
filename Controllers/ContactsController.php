@@ -1,8 +1,17 @@
 <?php
 
-namespace Ostepan\Lib;
+namespace Controllers;
 
-class ContactsController 
+class ContactsController extends AbstractController
 {
-    
+    public function __construct()
+    {
+        
+    }
+
+    public function doAction()
+    {
+        echo __CLASS__;
+    }
+    //TODO: implements ContactsController 
 }

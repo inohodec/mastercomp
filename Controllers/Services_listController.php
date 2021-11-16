@@ -1,8 +1,7 @@
 <?php
-
 namespace Controllers;
 
-class PostController extends AbstractController
+class Services_ListController extends AbstractController
 {
     public function __construct()
     {
@@ -13,5 +12,5 @@ class PostController extends AbstractController
     {
         echo __CLASS__;
     }
-    //TODO: PostController
+    //TODO: ServicesController
 }

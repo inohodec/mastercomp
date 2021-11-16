@@ -1,7 +1,17 @@
 <?php
-namespace Ostepan\Lib;
+namespace Controllers;
 
-class ArticlesController 
+class ArticlesController extends AbstractController
 {
+    public function __construct()
+    {
+        
+    }
+
+    public function doAction()
+    {
+        echo __CLASS__;
+    }
     
+    //TODO: ArticlesController 
 }

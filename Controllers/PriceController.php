@@ -2,16 +2,16 @@
 
 namespace Controllers;
 
-class PostController extends AbstractController
+class PriceController extends AbstractController
 {
     public function __construct()
     {
         
     }
-
+    
+    
     public function doAction()
     {
-        echo __CLASS__;
+        require_once "../Views/Price.php";
     }
-    //TODO: PostController
 }

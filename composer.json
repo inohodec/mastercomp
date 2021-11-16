@@ -13,7 +13,10 @@
     },
     "autoload": {
         "psr-4": {
-            "Ostepan\\Lib\\": "myOwnLibs"
+            "Ostepan\\Lib\\": "myOwnLibs",
+            "Controllers\\": "Controllers",
+            "Models\\": "Models",
+            "Views\\": "Views"
         }
     }
 }
