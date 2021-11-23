@@ -1,7 +1,7 @@
 <?php
 namespace Controllers;
 
-class ArticlesController extends AbstractController
+class ArticleListController extends AbstractController
 {
     public function __construct()
     {

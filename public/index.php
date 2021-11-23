@@ -14,17 +14,13 @@ require_once "../vendor/autoload.php";
 * * после разбивает строку на сегменты (val1/val/val3 => [0 = val1, 1 = val2, ...])
 */
 
-$clearedURI = str_replace("?{$_SERVER['QUERY_STRING']}", "", $_SERVER['REQUEST_URI']);
-$clearedURI = trim($clearedURI, "/");
-$uriSegments = explode("/", $clearedURI);
+use \Ostepan\Lib\Router;
 
-/***
- * * Hi there
- */
-
-$controllerFactory = new \Ostepan\Lib\ControllerFactory($uriSegments);
-$controller = $controllerFactory->getController();
+$router = new Router();
+$controller = $router->getController();
 $controller->doAction();
+
+
 
 /*
 if ($uriSegments[0] === "" || $uriSegments[0] === "index.php") {

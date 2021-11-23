@@ -12,7 +12,7 @@
 </head>
 
 <body>
-    <div class="container">
+    <div class="container-lg">
         <div class="row">
             <h1 class="text-center">Прайс на наши услуги</h1>
         </div>
@@ -31,48 +31,91 @@
                 </ul>
                 <div class="tab-content" id="myTabContent">
                     <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                    <?php
-                        echo "<h2>Ремонт компьютеров</h2>";
-                        echo "<table class='table-responsive-lg table table-striped table-hover table-bordered'>";
-                        echo "<thead>";
-                        echo "    <tr>";
-                        echo "        <th scope=\"col\">Наименование</th>";
-                        echo "        <th scope=\"col\">Цена в гривнах</th>";
-                        echo "    </tr>";
-                        echo "</thead>";
-                        echo "    <tbody>";
-                            foreach ($_SERVER as $item => $val ) {
-                                echo "<tr>";
-                                echo "<td>$item</td><td><code>$val</code></td>";
-                                echo "</tr>";
-                            }
-                            echo "</tbody>";    
-                        echo "</table>";
-                    ?>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">First</th>
+                                    <th scope="col">Last</th>
+                                    <th scope="col">Handle</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>Mark</td>
+                                    <td>Otto</td>
+                                    <td>@mdo</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">2</th>
+                                    <td>Jacob</td>
+                                    <td>Thornton</td>
+                                    <td>@fat</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">3</th>
+                                    <td colspan="2">Larry the Bird</td>
+                                    <td>@twitter</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                     <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                    <?php
-                        echo "<h2>Ремонт принтеров</h2>";
-                        echo "<table class='table table-dark table-striped'>";
-                        foreach ($_SERVER as $item => $val ) {
-                            echo "<tr>";
-                            echo "<td>$item</td><td><code>$val</code></td>";
-                            echo "</tr>";
-                        }
-                        echo "</table>";
-                        ?>
+                    <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">First</th>
+                                    <th scope="col">Last</th>
+                                    <th scope="col">Handle</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>Mark</td>
+                                    <td>Otto</td>
+                                    <td>@mdo</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">2</th>
+                                    <td>Jacob</td>
+                                    <td>Thornton</td>
+                                    <td>@fat</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">3</th>
+                                    <td colspan="2">Larry the Bird</td>
+                                    <td>@twitter</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                     <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
-                    <?php
-                        echo "<h2>Заправка картриджей</h2>";
-                        echo "<table class='table table-hover'>";
-                        foreach ($_SERVER as $item => $val ) {
-                            echo "<tr>";
-                            echo "<td>$item</td><td><code>$val</code></td>";
-                            echo "</tr>";
-                        }
-                        echo "</table>";
-                    ?>
+                        
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Переменная</th>
+                                    <th scope="col">Значение</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            <?php
+                                foreach ($_SERVER as $item => $value) {
+                                    echo "<tr>";
+                                    echo "  <td class=\"text-muted\">$item</td>";
+                                    echo "  <td><code>$value</code></td>";
+                                    echo "</tr>";
+                                }
+                            ?>
+                                <tr>
+                                    <td>Otto</td>
+                                    <td>@mdo</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>

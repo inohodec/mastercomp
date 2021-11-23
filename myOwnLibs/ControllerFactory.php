@@ -1,50 +1,62 @@
 <?php
 
+/**
+ * ! Класс должен включать подключенными все контроллеры из папки /Controllers
+ */
 namespace Ostepan\Lib;
 
-use Controllers\MainPageController;
 
 class ControllerFactory 
 {
-    private array $uriSegment;
-    private \Controllers\Page404Controller $error404Page;
+    private $error404Page = "Controllers\Page404Controller";
+    private $indexPageController = "Controllers\MainPageController";
 
-    public function __construct(array $uriSegment)
-    {
-        $this->uriSegment = $uriSegment;
-        $this->error404Page = new \Controllers\Page404Controller();
-    }
-
-        
     /**
      * getController
      *
      * @return one of the family \Controllers\...Controller 
      */
-    public function getController()
+    public function getController(string $name, string $article)
     {
-        return $this->createController();
+        return $this->createController($name, $article);
     }
 
-    protected function createController() 
+    private function createController(string $name, string $article) 
     {
-        $controller = $this->getControllerName();
+        $controllerName = $this->indexPageChecking($name);
+        $classExists = $this->isClassExists($controllerName);
+        $controller = $classExists ? new $controllerName($name, $article) : new $this->error404Page;
+        return $controller;
+    }
+    
+    /**
+     * * indexPageChecking checking is name = "" or index.php and if yes returns 
+     * * index page controller neme if not add "Controller\" to current name
+     *
+     * @param  mixed $name
+     * @return string
+     */
+    private function indexPageChecking(string $name): string
+    {
+        if ($name === "" || $name === "index.php") {
+            $controller = $this->indexPageController;
+        } else {
+            $controller = "Controllers\\" . $name . "Controller";
+        }
+        return $controller;
+    }
+
         
-        if (class_exists($controller)) {
-            return new $controller();
-        } else {
-            return $this->error404Page;
-        }
-    }
-
-    protected function getControllerName(): string
+    /**
+     * * isClassExists cheks is class exists
+     *
+     * @param  mixed $name
+     * @return bool
+     */
+    private function isClassExists(string $name): bool
     {
-        if (!isset($this->uriSegment[0]) || $this->uriSegment[0] === "" || $this->uriSegment[0] === "index.php") {
-            $controllerName = "\\Controllers\\MainPageController";
-            return $controllerName;
-        } else {
-            $controllerName = "\\Controllers\\" . ucfirst($this->uriSegment[0]) . "Controller";
-            return $controllerName;
-        }
+        $classExistence = class_exists($name);
+        return $classExistence;
     }
+    
 }

@@ -1,7 +1,7 @@
 <?php
 namespace Controllers;
 
-class Services_ListController extends AbstractController
+class ServiceListController extends AbstractController
 {
     public function __construct()
     {

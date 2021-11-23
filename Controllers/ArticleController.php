@@ -2,7 +2,7 @@
 
 namespace Controllers;
 
-class PostController extends AbstractController
+class ArticleController extends AbstractController
 {
     public function __construct()
     {
