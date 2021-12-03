@@ -57,7 +57,7 @@ class UriPreparator
      */
     private function deleteArguments(string $string): string
     {
-        return str_replace($this->queryString, "", $string); 
+        return str_replace("?" . $this->queryString, "", $string); 
     }
         
     /**

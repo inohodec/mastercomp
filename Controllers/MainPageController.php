@@ -11,7 +11,7 @@ class MainPageController extends AbstractController
 
     public function doAction()
     {
-        echo __CLASS__;
+        require_once "../Views/MainPage.php";
     }
     //TODO: implements MainPageController
 }

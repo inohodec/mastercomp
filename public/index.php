@@ -1,7 +1,9 @@
 <?php
 error_reporting(E_ALL);
-session_start();
 ini_set('display_errors', 1);
+ini_set('display_startup_errors', '1');
+session_start();
+
 
 
 require_once "../vendor/autoload.php";
@@ -14,6 +16,7 @@ require_once "../vendor/autoload.php";
 * * после разбивает строку на сегменты (val1/val/val3 => [0 = val1, 1 = val2, ...])
 */
 
+
 use \Ostepan\Lib\Router;
 
 $router = new Router();
@@ -21,14 +24,3 @@ $controller = $router->getController();
 $controller->doAction();
 
 
-
-/*
-if ($uriSegments[0] === "" || $uriSegments[0] === "index.php") {
-    require_once "../Views/MainPage.php";
-} else {
-    $filePath = "../Views/" . ucfirst($uriSegments[0]) . ".php";
-    $existence = file_exists($filePath);
-    $filePath = ($existence) ? $filePath : "../Views/404.php";
-    require_once $filePath;
-}
-*/

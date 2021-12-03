@@ -25,7 +25,11 @@ class ControllerFactory
     {
         $controllerName = $this->indexPageChecking($name);
         $classExists = $this->isClassExists($controllerName);
-        $controller = $classExists ? new $controllerName($name, $article) : new $this->error404Page;
+        if ($classExists) {
+            $controller = new $controllerName;
+        } else {
+            $controller = new $this->error404Page();
+        }
         return $controller;
     }
     
@@ -41,7 +45,7 @@ class ControllerFactory
         if ($name === "" || $name === "index.php") {
             $controller = $this->indexPageController;
         } else {
-            $controller = "Controllers\\" . $name . "Controller";
+            $controller = "Controllers\\" . ucfirst($name) . "Controller";
         }
         return $controller;
     }

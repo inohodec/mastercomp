@@ -16,7 +16,8 @@
             "Ostepan\\Lib\\": "myOwnLibs",
             "Controllers\\": "Controllers",
             "Models\\": "Models",
-            "Views\\": "Views"
+            "Views\\": "Views",
+            "Template\\": "Layouts"
         }
     }
 }
