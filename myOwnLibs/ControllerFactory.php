@@ -5,6 +5,7 @@
  */
 namespace Ostepan\Lib;
 
+use Controllers\AbstractController;
 
 class ControllerFactory 
 {
@@ -16,7 +17,7 @@ class ControllerFactory
      *
      * @return one of the family \Controllers\...Controller 
      */
-    public function getController(string $name, string $article)
+    public function getController(string $name, string $article): AbstractController
     {
         return $this->createController($name, $article);
     }
