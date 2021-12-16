@@ -2,29 +2,27 @@
 
 namespace Ostepan\Lib\Loggers;
 
-abstract class AbstractLogger
+abstract class AbstractLogger 
 {
-    /**
-     * must contains path to site's root directory
-     */
-    private $rootFolder;
+    protected string $filePath;
 
     public function __construct()
     {
-        $this->rootFolder = $_SERVER["DOCUMENT_ROOT"];
+        $this->filePath = $this->setFilePath();
     }
+
+    /**
+     * sets up path to log file for concrete logger
+     */
+    abstract protected function setFilePath(): string;
     
     /**
-     * every child class implements an own realisation
+     * Get the value of filePath
+     *
+     * @return  string
      */
-    abstract public function writeDataToFile(string $data);
-
-    /**
-     * returns root site global path without "/" at the end /home/www/site.com
-     */
-    public function getRootFolder(): string
+    public function getFilePath(): string
     {
-        return $this->rootFolder;
+        return $this->filePath;
     }
-
 }

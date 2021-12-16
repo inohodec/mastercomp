@@ -3,6 +3,7 @@
 namespace Ostepan\Lib;
 
 use \Ostepan\Lib\ControllerFactory;
+use Controllers\AbstractController;
 use PDO;
 
 class AppHelper 
@@ -69,7 +70,7 @@ class AppHelper
      * Return concrete Controller
      */
 
-    public function getController(string $name, string $article): \Controllers\AbstractController
+    public function getController(string $name, string $article): AbstractController
     {
         return $this->factory->getController($name, $article);
     }

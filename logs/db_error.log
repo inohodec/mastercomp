@@ -10,3 +10,6 @@ SQLSTATE[HY000] [1045] Access denied for user 'inohodec'@'localhost' (using pass
 10-12-2021 15:34:26 => SQLSTATE[HY000] [1045] Access denied for user 'inohodec'@'localhost' (using password: YES)
 10-12-2021 15:34:38 => SQLSTATE[HY000] [1045] Access denied for user 'inohodec'@'localhost' (using password: YES)
 10-12-2021 15:34:45 => SQLSTATE[HY000] [1045] Access denied for user 'inohodec'@'localhost' (using password: YES)
+13-12-2021 10:54:26 => SQLSTATE[HY000] [1045] Access denied for user 'inohodec'@'localhost' (using password: YES)
+13-12-2021 10:59:17 => SQLSTATE[HY000] [1045] Access denied for user 'inohodec'@'localhost' (using password: YES)
+13-12-2021 11:04:14 => SQLSTATE[HY000] [1045] Access denied for user 'inohodec'@'localhost' (using password: YES)
